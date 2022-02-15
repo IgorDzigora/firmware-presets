@@ -1,0 +1,244 @@
+#$ TITLE: IsCan - Armatan Tadpole HD 3inch
+#$ FIRMWARE_VERSION: 4.3
+#$ CATEGORY: TUNE
+#$ STATUS: EXPERIMENTAL
+#$ AUTHOR: IsCan (Igor Dzigora)
+#$ DESCRIPTION: Iscan is fpv models creator and fpv pilot
+#$ DESCRIPTION: 
+#$ DESCRIPTION: Base tune for Armatan Tadpole HD 3 inch.
+#$ DESCRIPTION: This tune should get you right in the sweet spot for P/D balance and enough filter settings.
+#$ DESCRIPTION: 
+#$ DESCRIPTION: OPTIONS:
+#$ DESCRIPTION: - 48K ESC PWM
+#$ DESCRIPTION: 
+#$ DISCUSSION: https://github.com/betaflight/firmware-presets/pull/??
+
+#$ OPTION BEGIN (UNCHECKED): Filter Settings DSHOT 600
+# -- Filter Settings --
+# master
+set gyro_lpf1_static_hz = 350
+set gyro_lpf2_static_hz = 700
+set dyn_notch_count = 4
+set dyn_notch_min_hz = 125
+set dyn_notch_max_hz = 850
+set gyro_lpf1_dyn_min_hz = 350
+set gyro_lpf1_dyn_max_hz = 700
+set acc_trim_pitch = -6
+set acc_trim_roll = 18
+set acc_calibration = -46,-15,111,1
+set serialrx_provider = SBUS
+set min_throttle = 1070
+set dshot_bidir = ON
+set use_unsynced_pwm = OFF
+set motor_pwm_protocol = DSHOT600
+set motor_pwm_rate = 480
+set motor_poles = 12
+set motor_output_reordering = 3,2,1,0,4,5,6,7
+set failsafe_procedure = AUTO-LAND
+set align_board_yaw = 180
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set small_angle = 180
+set deadband = 5
+set yaw_deadband = 5
+set simplified_gyro_filter_multiplier = 140
+set osd_rssi_alarm = 0
+set osd_vbat_pos = 14688
+set osd_rssi_pos = 14337
+set osd_rssi_dbm_pos = 33
+set osd_remaining_time_estimate_pos = 0
+set osd_flymode_pos = 14349
+set osd_anti_gravity_pos = 46
+set osd_throttle_pos = 14745
+set osd_crosshairs_pos = 14574
+set osd_ah_sbar_pos = 14543
+set osd_ah_pos = 14447
+set osd_current_pos = 352
+set osd_mah_drawn_pos = 14752
+set osd_gps_speed_pos = 56
+set osd_gps_lon_pos = 17
+set osd_gps_lat_pos = 1
+set osd_gps_sats_pos = 24
+set osd_home_dir_pos = 14735
+set osd_home_dist_pos = 429
+set osd_altitude_pos = 14551
+set osd_pid_roll_pos = 14823
+set osd_pid_pitch_pos = 14826
+set osd_pid_yaw_pos = 360
+set osd_power_pos = 14776
+set osd_pidrate_profile_pos = 14361
+set osd_warnings_pos = 14794
+set osd_avg_cell_voltage_pos = 14720
+set osd_disarmed_pos = 14379
+set osd_nvario_pos = 14583
+set osd_esc_tmp_pos = 0
+set osd_core_temp_pos = 161
+set osd_rate_profile_name_pos = 14712
+set osd_profile_name_pos = 144
+set osd_efficiency_pos = 0
+set osd_stat_max_dist = ON
+set osd_stat_endbatt = ON
+set osd_stat_max_alt = ON
+set osd_stat_max_esc_temp = ON
+set osd_stat_min_link_quality = ON
+set osd_stat_total_time = ON
+set osd_stat_total_dist = ON
+set osd_stat_min_rssi_dbm = ON
+set debug_mode = GYRO_SCALED
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 0
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 105
+set dterm_lpf1_dyn_max_hz = 210
+set dterm_lpf1_static_hz = 105
+set dterm_lpf2_static_hz = 210
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 5000
+set iterm_rotation = ON
+set yaw_lowpass_hz = 0
+set p_pitch = 51
+set i_pitch = 92
+set d_pitch = 37
+set f_pitch = 103
+set p_roll = 47
+set i_roll = 84
+set d_roll = 34
+set f_roll = 94
+set p_yaw = 47
+set i_yaw = 84
+set f_yaw = 94
+set d_min_roll = 34
+set d_min_pitch = 37
+set d_max_gain = 0
+set d_max_advance = 0
+set motor_output_limit = 80
+set thrust_linear = 20
+set dyn_idle_min_rpm = 35
+set simplified_master_multiplier = 105
+set simplified_d_gain = 110
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 75
+set simplified_pitch_d_gain = 95
+set simplified_pitch_pi_gain = 105
+set simplified_dterm_filter_multiplier = 140
+
+profile 1
+
+# profile 1
+set dterm_lpf1_dyn_min_hz = 105
+set dterm_lpf1_dyn_max_hz = 210
+set dterm_lpf1_static_hz = 105
+set dterm_lpf2_static_hz = 210
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 5000
+set iterm_rotation = ON
+set yaw_lowpass_hz = 0
+set p_pitch = 53
+set i_pitch = 70
+set d_pitch = 37
+set f_pitch = 95
+set p_roll = 47
+set i_roll = 70
+set d_roll = 34
+set f_roll = 90
+set p_yaw = 51
+set i_yaw = 70
+set f_yaw = 90
+set d_min_roll = 34
+set d_min_pitch = 37
+set d_max_gain = 0
+set d_max_advance = 0
+set motor_output_limit = 80
+set thrust_linear = 20
+set dyn_idle_min_rpm = 35
+set simplified_pids_mode = OFF
+set simplified_master_multiplier = 150
+set simplified_d_gain = 90
+set simplified_dmax_gain = 0
+set simplified_pitch_d_gain = 115
+set simplified_pitch_pi_gain = 105
+set simplified_dterm_filter_multiplier = 140
+
+profile 2
+
+# profile 2
+set dterm_lpf1_dyn_min_hz = 105
+set dterm_lpf1_dyn_max_hz = 210
+set dterm_lpf1_static_hz = 105
+set dterm_lpf2_static_hz = 210
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 5000
+set iterm_rotation = ON
+set yaw_lowpass_hz = 0
+set p_pitch = 74
+set i_pitch = 132
+set d_pitch = 52
+set f_pitch = 196
+set p_roll = 67
+set i_roll = 120
+set f_roll = 180
+set p_yaw = 67
+set i_yaw = 120
+set f_yaw = 180
+set d_min_roll = 40
+set d_min_pitch = 52
+set d_max_gain = 0
+set d_max_advance = 0
+set motor_output_limit = 80
+set thrust_linear = 20
+set dyn_idle_min_rpm = 35
+set simplified_master_multiplier = 150
+set simplified_d_gain = 90
+set simplified_dmax_gain = 0
+set simplified_pitch_d_gain = 115
+set simplified_pitch_pi_gain = 105
+set simplified_dterm_filter_multiplier = 140
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_expo = 7
+set pitch_expo = 7
+set yaw_expo = 7
+
+rateprofile 1
+
+# rateprofile 1
+set rates_type = KISS
+set roll_rc_rate = 210
+set pitch_rc_rate = 210
+set yaw_rc_rate = 190
+set roll_expo = 40
+set pitch_expo = 40
+set yaw_expo = 40
+set roll_srate = 35
+set pitch_srate = 35
+set yaw_srate = 40
+set tpa_rate = 75
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): 48k ESC PWM
+# -- ADDER: For 48khz PWM --
+set thrust_linear = 20
+#$ OPTION END
+
+

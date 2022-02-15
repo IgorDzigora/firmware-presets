@@ -2322,6 +2322,42 @@
       ]
     },
     {
+      "fullPath": "presets/4.3/tune/Iscan_tech_Armatan_Tadpole.txt",
+      "hash": "d5b63fb1002b340e6fa3ff73b51f5fbffaffebeaffbdec9b7fd1b02659f318d5",
+      "options": [
+        {
+          "name": "Filter Settings DSHOT 600",
+          "checked": false
+        },
+        {
+          "name": "PID Settings Profile 0",
+          "checked": false
+        },
+        {
+          "name": "48k ESC PWM",
+          "checked": false
+        }
+      ],
+      "title": "IsCan - Armatan Tadpole HD 3inch",
+      "firmware_version": [
+        "4.3"
+      ],
+      "category": "TUNE",
+      "status": "EXPERIMENTAL",
+      "author": "IsCan (Igor Dzigora)",
+      "description": [
+        "Iscan is fpv models creator and fpv pilot",
+        "",
+        "Base tune for Armatan Tadpole HD 3 inch.",
+        "This tune should get you right in the sweet spot for P/D balance and enough filter settings.",
+        "",
+        "OPTIONS:",
+        "- 48K ESC PWM",
+        ""
+      ],
+      "discussion": "https://github.com/betaflight/firmware-presets/pull/??"
+    },
+    {
       "fullPath": "presets/4.3/tune/Iscan_tech_Aura.txt",
       "hash": "586b3ea84f41b8e374e4acc6b854aa7735a01bd8b57e209d2137bfdbdd22622c",
       "options": [
