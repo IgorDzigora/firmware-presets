@@ -1,0 +1,213 @@
+#$ TITLE: IsCan - Protek 35 DJI-HD
+#$ FIRMWARE_VERSION: 4.2
+#$ CATEGORY: TUNE
+#$ STATUS: EXPERIMENTAL
+#$ KEYWORDS: cinewhoop
+#$ AUTHOR: IsCan (Igor Dzigora)
+#$ DESCRIPTION: Iscan tune Protek 35 4S
+#$ DESCRIPTION:  Brushed Motors XING 2203.5 3600Kv
+#$ DESCRIPTION: 
+#$ DESCRIPTION: DSHOT 600, RPM-Filters ON, Bl-Heli-M
+#$ DESCRIPTION: OPTIONS:
+#$ DESCRIPTION: - 48K ESC PWM
+#$ DESCRIPTION: BLHELI-M Configurator
+#$ DISCUSSION: https://github.com/Asizon/blheli-configurator/releases
+
+#$ OPTION BEGIN (UNCHECKED): Filter Settings
+# master
+set gyro_lowpass2_hz = 325
+set dyn_notch_width_percent = 10
+set dyn_notch_q = 250
+set dyn_notch_min_hz = 180
+set dyn_notch_max_hz = 500
+set dyn_lpf_gyro_min_hz = 260
+set dyn_lpf_gyro_max_hz = 650
+set acc_trim_pitch = -6
+set acc_trim_roll = 6
+set acc_calibration = 44,-47,143,1
+set mag_hardware = NONE
+set rssi_channel = 16
+set serialrx_provider = CRSF
+set blackbox_p_ratio = 16
+set dshot_idle_value = 800
+set failsafe_procedure = AUTO-LAND
+set vbat_max_cell_voltage = 440
+set yaw_motors_reversed = ON
+set small_angle = 180
+set gps_provider = UBLOX
+set gps_auto_baud = ON
+set pid_process_denom = 2
+set thrust_linear = 50
+set debug_mode = GYRO_SCALED
+set name = Protek 35 HD
+#$ OPTION END
+
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 1 (Basic)
+profile 0
+# profile 0
+set dyn_lpf_dterm_min_hz = 77
+set dyn_lpf_dterm_max_hz = 187
+set dterm_lowpass2_hz = 165
+set vbat_pid_gain = ON
+set anti_gravity_gain = 5500
+set feedforward_transition = 40
+set iterm_relax = RPY
+set iterm_relax_cutoff = 10
+set yaw_lowpass_hz = 80
+set throttle_boost = 0
+set p_pitch = 65
+set i_pitch = 99
+set d_pitch = 45
+set f_pitch = 116
+set p_roll = 58
+set i_roll = 94
+set d_roll = 42
+set f_roll = 109
+set p_yaw = 50
+set i_yaw = 99
+set f_yaw = 109
+set d_min_roll = 0
+set d_min_pitch = 0
+set d_min_boost_gain = 45
+set d_min_advance = 50
+set ff_boost = 25
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 2 (Ulian)
+profile 1
+# profile 1
+set dyn_lpf_dterm_min_hz = 77
+set dyn_lpf_dterm_max_hz = 187
+set dterm_lowpass2_hz = 165
+set vbat_pid_gain = ON
+set p_pitch = 65
+set i_pitch = 86
+set d_pitch = 51
+set f_pitch = 106
+set p_roll = 59
+set d_roll = 49
+set f_roll = 100
+set p_yaw = 70
+set f_yaw = 101
+set d_min_roll = 26
+set d_min_pitch = 26
+set ff_boost = 25
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 3 Iscan
+profile 2
+# profile 2
+set dyn_lpf_dterm_min_hz = 77
+set dyn_lpf_dterm_max_hz = 187
+set dterm_lowpass2_hz = 165
+set vbat_pid_gain = ON
+set iterm_relax_cutoff = 10
+set yaw_lowpass_hz = 100
+set p_pitch = 69
+set d_pitch = 44
+set f_pitch = 143
+set p_roll = 63
+set d_roll = 40
+set f_roll = 135
+set p_yaw = 68
+set f_yaw = 135
+set d_min_roll = 0
+set d_min_pitch = 0
+set ff_boost = 25
+#$ OPTION END
+
+
+#$ OPTION BEGIN (UNCHECKED): Rate Profile 1 Default
+rateprofile 0
+# rateprofile 0
+set thr_mid = 100
+set thr_expo = 20
+set rates_type = ACTUAL
+set roll_rc_rate = 19
+set pitch_rc_rate = 19
+set yaw_rc_rate = 19
+set roll_expo = 60
+set pitch_expo = 60
+set yaw_expo = 60
+set roll_srate = 90
+set pitch_srate = 90
+set yaw_srate = 90
+set tpa_rate = 70
+set tpa_breakpoint = 1300
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Rate Profile 2 Ulian
+rateprofile 1
+# rateprofile 1
+set roll_rc_rate = 125
+set pitch_rc_rate = 125
+set yaw_rc_rate = 125
+set roll_srate = 73
+set pitch_srate = 73
+set yaw_srate = 72
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Rate Profile 3 Iscan
+rateprofile 2
+# rateprofile 2
+set rates_type = ACTUAL
+set roll_rc_rate = 19
+set pitch_rc_rate = 19
+set yaw_rc_rate = 19
+set roll_expo = 60
+set pitch_expo = 60
+set yaw_expo = 60
+set roll_srate = 90
+set pitch_srate = 90
+set yaw_srate = 90
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): DJI OSD
+set osd_vbat_pos = 14721
+set osd_rssi_pos = 14337
+set osd_link_quality_pos = 14369
+set osd_flymode_pos = 14348
+set osd_throttle_pos = 245
+set osd_crosshairs_pos = 14541
+set osd_ah_sbar_pos = 14542
+set osd_ah_pos = 14414
+set osd_current_pos = 14359
+set osd_mah_drawn_pos = 14392
+set osd_craft_name_pos = 330
+set osd_gps_speed_pos = 235
+set osd_gps_sats_pos = 136
+set osd_home_dir_pos = 67
+set osd_home_dist_pos = 117
+set osd_altitude_pos = 14583
+set osd_pid_roll_pos = 488
+set osd_pid_pitch_pos = 456
+set osd_power_pos = 388
+set osd_warnings_pos = 14826
+set osd_avg_cell_voltage_pos = 14753
+set osd_disarmed_pos = 2090
+set osd_nvario_pos = 14551
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Cinematic Mode
+set iterm_relax_cutoff = 5
+set rc_smoothing_auto_smoothness = 40
+set ff_interpolate_sp = AVERAGED_4
+set ff_smooth_factor = 50
+set ff_spike_limit = 50
+set ff_boost = 0
+set feedforward_transition = 70
+set yaw_lowpass_hz = 50
+set throttle_boost = 2
+set throttle_boost_cutoff = 10
+set dyn_lpf_dterm_curve_expo = 8
+set gyro_rpm_notch_q = 900
+set iterm_windup = 75
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): 48k ESC PWM
+# -- ADDER: For 48khz PWM --
+set thrust_linear = 25
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+#$ OPTION END

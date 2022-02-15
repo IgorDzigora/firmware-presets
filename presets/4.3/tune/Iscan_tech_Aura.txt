@@ -1,0 +1,86 @@
+#$ TITLE: IsCan - CineWHOOP AURA Zbroy
+#$ FIRMWARE_VERSION: 4.3
+#$ CATEGORY: TUNE
+#$ STATUS: EXPERIMENTAL
+#$ AUTHOR: IsCan (Igor Dzigora)
+#$ DESCRIPTION: Iscan is fpv models creator and fpv pilot
+#$ DESCRIPTION: 
+#$ DESCRIPTION: Base tune for Aura Zbroy.
+#$ DESCRIPTION: This tune should get you right in the sweet spot for P/D balance and enough filter settings.
+#$ DESCRIPTION: 
+#$ DESCRIPTION: OPTIONS:
+#$ DESCRIPTION: - 48K ESC PWM
+#$ DESCRIPTION: 
+#$ DISCUSSION: https://github.com/betaflight/firmware-presets/pull/??
+
+#$ OPTION BEGIN (UNCHECKED): Filter Settings DSHOT 600
+# -- Filter Settings --
+# master
+set gyro_lpf1_static_hz = 0
+set gyro_lpf2_static_hz = 475
+set dyn_notch_count = 4
+set dyn_notch_min_hz = 75
+set dyn_notch_max_hz = 1000
+set gyro_lpf1_dyn_min_hz = 237
+set gyro_lpf1_dyn_max_hz = 475
+set acc_calibration = 106,-21,321,1
+set dshot_idle_value = 750
+set dshot_bidir = ON
+set motor_poles = 12
+set yaw_motors_reversed = ON
+set simplified_gyro_filter_multiplier = 95
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 1800
+set gyro_2_align_yaw = 900
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 0
+profile 0
+
+# profile 0
+set dterm_lpf1_dyn_min_hz = 71
+set dterm_lpf1_dyn_max_hz = 142
+set dterm_lpf1_static_hz = 0
+set dterm_lpf2_static_hz = 142
+set vbat_sag_compensation = 100
+set anti_gravity_gain = 10000
+set iterm_relax_cutoff = 10
+set p_pitch = 67
+set i_pitch = 120
+set d_pitch = 67
+set f_pitch = 180
+set p_roll = 67
+set i_roll = 120
+set d_roll = 67
+set f_roll = 180
+set p_yaw = 150
+set i_yaw = 150
+set f_yaw = 180
+set d_min_roll = 67
+set d_min_pitch = 67
+set thrust_linear = 20
+set simplified_pids_mode = RP
+set simplified_master_multiplier = 150
+set simplified_d_gain = 150
+set simplified_dmax_gain = 0
+set simplified_pitch_d_gain = 100
+set simplified_pitch_pi_gain = 100
+set simplified_dterm_filter_multiplier = 95
+
+profile 1
+
+# profile 1
+set dterm_lpf1_static_hz = 0
+
+profile 2
+
+# restore original profile selection
+profile 0
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): 48k ESC PWM
+# -- ADDER: For 48khz PWM --
+set thrust_linear = 20
+#$ OPTION END
+
+

@@ -1,0 +1,125 @@
+#$ TITLE: IsCan - HKRC 6s Dshot 600 RPM-32Bit
+#$ FIRMWARE_VERSION: 4.2
+#$ CATEGORY: TUNE
+#$ STATUS: EXPERIMENTAL
+#$ KEYWORDS: 7in, 7", freestyle
+#$ AUTHOR: IsCan (Igor Dzigora)
+#$ DESCRIPTION: Iscan tune HKRC 7inch 4s/6s
+#$ DESCRIPTION:  Brushed Motors RaceStar AIRA 2508 1200kv 6S
+#$ DESCRIPTION: HQPROP FPV 7035 series
+#$ DESCRIPTION: DSHOT 600, RPM-Filters ON, 32bit
+#$ DESCRIPTION: OPTIONS:
+#$ DESCRIPTION: - 48K ESC PWM
+#$ DESCRIPTION: 
+#$ DISCUSSION: 
+
+#$ OPTION BEGIN (UNCHECKED): Filter Settings RPM-on DSHOT 600
+# master
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 250
+set dyn_notch_min_hz = 110
+set dyn_notch_max_hz = 350
+set acc_calibration = 50,25,34,1
+set mag_hardware = NONE
+set fpv_mix_degrees = 30
+set serialrx_provider = SBUS
+set blackbox_p_ratio = 64
+set min_throttle = 1070
+set dshot_idle_value = 565
+set dshot_bidir = ON
+set use_unsynced_pwm = OFF
+set motor_pwm_protocol = DSHOT600
+set motor_pwm_rate = 480
+set failsafe_procedure = AUTO-LAND
+set yaw_motors_reversed = ON
+set gps_provider = UBLOX
+set gps_auto_baud = ON
+set gps_ublox_use_galileo = ON
+set osd_vbat_pos = 14721
+set osd_rssi_pos = 14337
+set osd_link_quality_pos = 66
+set osd_flymode_pos = 14349
+set osd_anti_gravity_pos = 33
+set osd_crosshairs_pos = 14541
+set osd_ah_sbar_pos = 14542
+set osd_ah_pos = 14414
+set osd_current_pos = 14743
+set osd_mah_drawn_pos = 14777
+set osd_craft_name_pos = 33
+set osd_gps_speed_pos = 14393
+set osd_gps_lon_pos = 492
+set osd_gps_lat_pos = 460
+set osd_gps_sats_pos = 14361
+set osd_home_dir_pos = 366
+set osd_home_dist_pos = 397
+set osd_altitude_pos = 14581
+set osd_pid_roll_pos = 14791
+set osd_pid_pitch_pos = 14823
+set osd_pid_yaw_pos = 459
+set osd_pidrate_profile_pos = 14369
+set osd_warnings_pos = 14761
+set osd_avg_cell_voltage_pos = 14753
+set osd_battery_usage_pos = 480
+set osd_disarmed_pos = 14379
+set osd_nvario_pos = 14552
+set osd_gps_sats_show_hdop = OFF
+set debug_mode = GYRO_SCALED
+#$ OPTION END
+
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 0
+profile 0
+# profile 0
+set anti_gravity_gain = 10000
+set iterm_relax_cutoff = 10
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+set p_pitch = 69
+set d_pitch = 73
+set f_pitch = 143
+set p_roll = 63
+set d_roll = 67
+set f_roll = 135
+set p_yaw = 68
+set f_yaw = 135
+set d_min_roll = 0
+set d_min_pitch = 0
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Rate Profile 
+rateprofile 0
+# rateprofile 0
+set rates_type = ACTUAL
+set roll_rc_rate = 10
+set pitch_rc_rate = 10
+set yaw_rc_rate = 10
+set roll_expo = 54
+set pitch_expo = 54
+set yaw_expo = 54
+set roll_srate = 80
+set pitch_srate = 80
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Cinematic Mode
+# -- ADDER: For 48khz PWM --
+set iterm_relax_cutoff = 5
+set rc_smoothing_auto_smoothness = 40
+set ff_interpolate_sp = AVERAGED_4
+set ff_smooth_factor = 50
+set ff_spike_limit = 50
+set ff_boost = 0
+set feedforward_transition = 70
+set yaw_lowpass_hz = 50
+set throttle_boost = 2
+set throttle_boost_cutoff = 10
+set dyn_lpf_dterm_curve_expo = 8
+set gyro_rpm_notch_q = 900
+set iterm_windup = 75
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): 48k ESC PWM
+# -- ADDER: For 48khz PWM --
+set thrust_linear = 25
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+#$ OPTION END

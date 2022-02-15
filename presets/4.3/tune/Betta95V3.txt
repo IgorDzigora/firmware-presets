@@ -1,0 +1,123 @@
+#$ TITLE: IsCan - Beta95X V3 Whoop Quadcopter
+#$ FIRMWARE_VERSION: 4.2
+#$ CATEGORY: TUNE
+#$ STATUS: EXPERIMENTAL
+#$ KEYWORDS: cinewhoop
+#$ AUTHOR: IsCan (Igor Dzigora)
+#$ DESCRIPTION: Beta95X V3 Whoop Quadcopter
+#$ DESCRIPTION:  1404 4500KV Motor  12p холостой ход 7,5
+#$ DESCRIPTION: Replace the D63 5-blade propellers with D63 3-Blade Props
+#$ DESCRIPTION: DSHOT 600, RPM-Filters ON, Bl-Heli-M
+#$ DESCRIPTION: OPTIONS:
+#$ DESCRIPTION: - 48K ESC PWM
+#$ DESCRIPTION: BLHELI-M Configurator
+#$ DISCUSSION: https://github.com/Asizon/blheli-configurator/releases
+
+#$ OPTION BEGIN (UNCHECKED): Filter Settings
+# master
+set gyro_lowpass_hz = 0
+set gyro_lowpass2_hz = 0
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 250
+set dyn_lpf_gyro_min_hz = 0
+set acc_calibration = -255,176,288,1
+set dshot_idle_value = 750
+set dshot_bidir = ON
+set motor_poles = 12
+set yaw_motors_reversed = ON
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 1800
+set gyro_2_align_yaw = 900
+#$ OPTION END
+
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 1 (without camera)
+profile 0
+
+# profile 0
+set dyn_lpf_dterm_min_hz = 80
+set dyn_lpf_dterm_max_hz = 110
+set dterm_lowpass_type = BIQUAD
+set dterm_lowpass2_hz = 0
+set p_pitch = 72
+set i_pitch = 117
+set d_pitch = 40
+set f_pitch = 124
+set p_roll = 65
+set i_roll = 111
+set d_roll = 38
+set f_roll = 117
+set p_yaw = 70
+set i_yaw = 117
+set f_yaw = 117
+set d_min_roll = 0
+set d_min_pitch = 0
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 1 (with camera)
+profile 1
+
+# profile 1
+set p_pitch = 60
+set i_pitch = 117
+set d_pitch = 42
+set f_pitch = 124
+set p_roll = 55
+set i_roll = 111
+set d_roll = 39
+set f_roll = 117
+set p_yaw = 59
+set i_yaw = 117
+set f_yaw = 117
+set d_min_roll = 0
+set d_min_pitch = 0
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): DJI OSD
+set osd_vbat_pos = 14721
+set osd_rssi_pos = 14337
+set osd_link_quality_pos = 14369
+set osd_flymode_pos = 14348
+set osd_throttle_pos = 245
+set osd_crosshairs_pos = 14541
+set osd_ah_sbar_pos = 14542
+set osd_ah_pos = 14414
+set osd_current_pos = 14359
+set osd_mah_drawn_pos = 14392
+set osd_craft_name_pos = 330
+set osd_gps_speed_pos = 235
+set osd_gps_sats_pos = 136
+set osd_home_dir_pos = 67
+set osd_home_dist_pos = 117
+set osd_altitude_pos = 14583
+set osd_pid_roll_pos = 488
+set osd_pid_pitch_pos = 456
+set osd_power_pos = 388
+set osd_warnings_pos = 14826
+set osd_avg_cell_voltage_pos = 14753
+set osd_disarmed_pos = 2090
+set osd_nvario_pos = 14551
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Cinematic Mode
+set iterm_relax_cutoff = 5
+set rc_smoothing_auto_smoothness = 40
+set ff_interpolate_sp = AVERAGED_4
+set ff_smooth_factor = 50
+set ff_spike_limit = 50
+set ff_boost = 0
+set feedforward_transition = 70
+set yaw_lowpass_hz = 50
+set throttle_boost = 2
+set throttle_boost_cutoff = 10
+set dyn_lpf_dterm_curve_expo = 8
+set gyro_rpm_notch_q = 900
+set iterm_windup = 75
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): 48k ESC PWM
+# -- ADDER: For 48khz PWM --
+set thrust_linear = 25
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+#$ OPTION END

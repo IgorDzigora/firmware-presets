@@ -1,0 +1,196 @@
+#$ TITLE: IsCan - BetaFPV PAVO 30
+#$ FIRMWARE_VERSION: 4.2
+#$ CATEGORY: TUNE
+#$ STATUS: EXPERIMENTAL
+#$ KEYWORDS: cinewhoop
+#$ AUTHOR: IsCan (Igor Dzigora)
+#$ DESCRIPTION: Iscan tune BetaFPV Pavo 30
+#$ DESCRIPTION:  Brushed Motors 1506 3000 kv 4S
+#$ DESCRIPTION: Gemfan D76
+#$ DESCRIPTION: DSHOT 600, RPM-Filters ON, BLHELY-M
+#$ DESCRIPTION: OPTIONS:
+#$ DESCRIPTION: - 48K ESC PWM
+#$ DESCRIPTION: 
+#$ DISCUSSION: 
+
+#$ OPTION BEGIN (UNCHECKED): Filter Settings RPM-on DSHOT 600
+# master
+set gyro_lowpass_hz = 500
+set gyro_lowpass2_hz = 0
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 250
+set dyn_notch_min_hz = 120
+set dyn_notch_max_hz = 450
+set dyn_lpf_gyro_min_hz = 0
+set acc_calibration = -118,-17,194,1
+set rc_smoothing_auto_smoothness = 40
+set serialrx_provider = CRSF
+set dshot_bidir = ON
+set failsafe_procedure = AUTO-LAND
+set align_board_roll = 180
+set beeper_dshot_beacon_tone = 3
+set yaw_motors_reversed = ON
+set thrust_linear = 25
+set osd_rssi_alarm = 0
+set osd_vbat_pos = 14688
+set osd_rssi_pos = 14337
+set osd_rssi_dbm_pos = 33
+set osd_remaining_time_estimate_pos = 0
+set osd_flymode_pos = 14349
+set osd_anti_gravity_pos = 46
+set osd_throttle_pos = 14745
+set osd_crosshairs_pos = 14574
+set osd_ah_sbar_pos = 14543
+set osd_ah_pos = 14447
+set osd_current_pos = 352
+set osd_mah_drawn_pos = 14752
+set osd_gps_speed_pos = 14392
+set osd_gps_lon_pos = 17
+set osd_gps_lat_pos = 1
+set osd_gps_sats_pos = 14360
+set osd_home_dir_pos = 14735
+set osd_home_dist_pos = 14765
+set osd_altitude_pos = 14551
+set osd_pid_yaw_pos = 360
+set osd_power_pos = 14776
+set osd_warnings_pos = 14794
+set osd_avg_cell_voltage_pos = 14720
+set osd_disarmed_pos = 14379
+set osd_nvario_pos = 14583
+set osd_esc_tmp_pos = 0
+set osd_core_temp_pos = 161
+set osd_rate_profile_name_pos = 2424
+set osd_profile_name_pos = 144
+set osd_efficiency_pos = 0
+set osd_stat_max_dist = ON
+set osd_stat_endbatt = ON
+set osd_stat_max_alt = ON
+set osd_stat_max_esc_temp = ON
+set osd_stat_min_link_quality = ON
+set osd_stat_total_time = ON
+set osd_stat_total_dist = ON
+set osd_stat_min_rssi_dbm = ON
+set debug_mode = GYRO_SCALED
+set gyro_rpm_notch_q = 900
+set name = Pavo30
+#$ OPTION END
+
+
+#$ OPTION BEGIN (UNCHECKED): PID Settings Profile 0
+profile 0
+
+# profile 0
+set dyn_lpf_dterm_min_hz = 0
+set dyn_lpf_dterm_curve_expo = 8
+set dterm_lowpass_type = BIQUAD
+set dterm_lowpass_hz = 100
+set dterm_lowpass2_hz = 0
+set vbat_sag_compensation = 100
+set feedforward_transition = 70
+set iterm_windup = 75
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+set yaw_lowpass_hz = 50
+set throttle_boost = 2
+set throttle_boost_cutoff = 10
+set p_pitch = 64
+set i_pitch = 126
+set d_pitch = 45
+set f_pitch = 200
+set p_roll = 59
+set i_roll = 119
+set d_roll = 42
+set f_roll = 189
+set p_yaw = 63
+set i_yaw = 126
+set f_yaw = 189
+set d_min_roll = 0
+set d_min_pitch = 0
+set ff_interpolate_sp = AVERAGED_4
+set ff_spike_limit = 50
+set ff_smooth_factor = 50
+set ff_boost = 0
+set idle_min_rpm = 24
+# restore original profile selection
+profile 0
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Rate Profile 
+rateprofile 0
+# rateprofile 0
+set rates_type = ACTUAL
+set roll_rc_rate = 10
+set pitch_rc_rate = 10
+set yaw_rc_rate = 10
+set roll_expo = 54
+set pitch_expo = 54
+set yaw_expo = 54
+set roll_srate = 80
+set pitch_srate = 80
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): DJI OSD GPS 
+set osd_rssi_alarm = 0
+set osd_vbat_pos = 14688
+set osd_rssi_pos = 14337
+set osd_rssi_dbm_pos = 33
+set osd_remaining_time_estimate_pos = 0
+set osd_flymode_pos = 14349
+set osd_anti_gravity_pos = 46
+set osd_throttle_pos = 14745
+set osd_crosshairs_pos = 14574
+set osd_ah_sbar_pos = 14543
+set osd_ah_pos = 14447
+set osd_current_pos = 352
+set osd_mah_drawn_pos = 14752
+set osd_gps_speed_pos = 14392
+set osd_gps_lon_pos = 17
+set osd_gps_lat_pos = 1
+set osd_gps_sats_pos = 14360
+set osd_home_dir_pos = 14735
+set osd_home_dist_pos = 14765
+set osd_altitude_pos = 14551
+set osd_pid_yaw_pos = 360
+set osd_power_pos = 14776
+set osd_warnings_pos = 14794
+set osd_avg_cell_voltage_pos = 14720
+set osd_disarmed_pos = 14379
+set osd_nvario_pos = 14583
+set osd_esc_tmp_pos = 0
+set osd_core_temp_pos = 161
+set osd_rate_profile_name_pos = 2424
+set osd_profile_name_pos = 144
+set osd_efficiency_pos = 0
+set osd_stat_max_dist = ON
+set osd_stat_endbatt = ON
+set osd_stat_max_alt = ON
+set osd_stat_max_esc_temp = ON
+set osd_stat_min_link_quality = ON
+set osd_stat_total_time = ON
+set osd_stat_total_dist = ON
+set osd_stat_min_rssi_dbm = ON
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): Cinematic Mode
+# -- ADDER: For 48khz PWM --
+set iterm_relax_cutoff = 5
+set rc_smoothing_auto_smoothness = 40
+set ff_interpolate_sp = AVERAGED_4
+set ff_smooth_factor = 50
+set ff_spike_limit = 50
+set ff_boost = 0
+set feedforward_transition = 70
+set yaw_lowpass_hz = 50
+set throttle_boost = 2
+set throttle_boost_cutoff = 10
+set dyn_lpf_dterm_curve_expo = 8
+set gyro_rpm_notch_q = 900
+set iterm_windup = 75
+#$ OPTION END
+
+#$ OPTION BEGIN (UNCHECKED): 48k ESC PWM
+# -- ADDER: For 48khz PWM --
+set thrust_linear = 25
+set pidsum_limit = 1000
+set pidsum_limit_yaw = 1000
+#$ OPTION END
